@@ -1,0 +1,6 @@
+{
+  "name": "Living Word Frames",
+  "description": "An elegant, premium, high-end picture frame customizer featuring custom wood and glass finishes with high-quality Bible verse typography in an Apple liquid-glass minimalist aesthetic.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

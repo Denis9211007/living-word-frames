@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif-lux: "Cormorant Garamond", "Playfair Display", serif;
+  --font-serif-display: "Cinzel", Georgia, serif;
+  --font-sans-lux: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-display-modern: "Montserrat", "Plus Jakarta Sans", sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(245, 245, 240, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(180, 180, 170, 0.4);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 140, 130, 0.6);
+}
+
+/* High-end realistic glass morphic panels resembling Apple liquid glass panels with faint blues/silvers */
+.glass-panel-light {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(240, 246, 255, 0.04) 100%);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    0 16px 40px -15px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0px rgba(255, 255, 255, 0.15),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.4),
+    inset 1px 0px 0px rgba(186, 220, 255, 0.08),
+    inset -1px 0px 0px rgba(186, 220, 255, 0.04);
+}
+
+.glass-panel-dark {
+  background: linear-gradient(135deg, rgba(12, 14, 21, 0.45) 0%, rgba(6, 7, 10, 0.50) 100%);
+  backdrop-filter: blur(30px) saturate(190%);
+  -webkit-backdrop-filter: blur(30px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.55),
+    0 24px 60px -10px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0px rgba(255, 255, 255, 0.12),
+    inset 0 -1.5px 2.5px rgba(0, 0, 0, 0.5),
+    inset 1px 0px 0px rgba(186, 220, 255, 0.06),
+    inset -1px 0px 0px rgba(186, 220, 255, 0.03);
+}
+
+/* Glass reflection shine effects */
+.glass-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-shine::before {
+  content: '';
+  position: absolute;
+  top: -150%;
+  left: -150%;
+  width: 400%;
+  height: 400%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.28) 48%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.28) 52%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  transform: rotate(30deg);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.glass-shine:hover::before {
+  transform: translate(75%, 75%) rotate(30deg);
+}
+
+/* Glass border premium overlay */
+.glass-bezel {
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.5), 
+    inset -1px 0 0 0 rgba(255, 255, 255, 0.3), 
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.2), 
+    inset 1px 0 0 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Ambient gradient backgrounds */
+.ambient-bg-light {
+  background: radial-gradient(circle at 10% 20%, rgba(240, 238, 230, 1) 0%, rgba(246, 245, 238, 1) 45%, rgba(235, 232, 222, 1) 90%);
+}
+
+.ambient-bg-gold {
+  background: radial-gradient(circle at top right, rgba(253, 250, 233, 0.7) 0%, rgba(248, 245, 231, 0.4) 50%, rgba(245, 242, 225, 0.2) 100%);
+}
+
+/* Shimmer keyframe animation */
+@keyframes delicate-glow {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50% { opacity: 0.25; transform: scale(1.05); }
+}
+
+.animate-glow-slow {
+  animation: delicate-glow 8s ease-in-out infinite;
+}
+
+/* Premium Apple-Style Glassmorphic Tiles with Chromatic Refraction & Shimmer */
+.premium-glass-tile {
+  position: relative;
+  background: linear-gradient(135deg, rgba(16, 18, 27, 0.40) 0%, rgba(8, 9, 12, 0.45) 100%);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 
+    0 12px 40px -10px rgba(0, 0, 0, 0.6),
+    0 24px 60px -15px rgba(0, 0, 0, 0.4),
+    inset 0 1.5px 0.5px rgba(255, 255, 255, 0.12),
+    inset 0 -1.5px 3px rgba(0, 0, 0, 0.5),
+    inset 1px 0px 0px rgba(186, 220, 255, 0.07),
+    inset -1px 0px 0px rgba(186, 220, 255, 0.04);
+}
+
+.premium-glass-tile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: linear-gradient(125deg, rgba(230, 242, 255, 0.03) 0%, rgba(255, 255, 255, 0) 50%, rgba(230, 241, 255, 0.01) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Shimmer streak of light on hover represent glass glossy reflections */
+.premium-glass-tile::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.01) 25%,
+    rgba(255, 255, 255, 0.06) 50%,
+    rgba(255, 255, 255, 0.01) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+  z-index: 2;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-glass-tile:hover {
+  transform: translateY(-2px) scale(1.008);
+  border-color: rgba(255, 255, 255, 0.13);
+  box-shadow: 
+    0 16px 48px -8px rgba(0, 0, 0, 0.7),
+    0 32px 72px -12px rgba(0, 0, 0, 0.45),
+    inset 0 1.5px 0.5px rgba(255, 255, 255, 0.18),
+    inset 0 -1.5px 3px rgba(0, 0, 0, 0.4),
+    inset 1px 0px 0px rgba(186, 220, 255, 0.12),
+    inset -1px 0px 0px rgba(186, 220, 255, 0.08);
+}
+
+.premium-glass-tile:hover::after {
+  transform: translate(180%, 0) skewX(-20deg);
+}
+
+/* Wood Grain Simulation Variables and Core Tones */
+:root {
+  /* Smoked American Walnut */
+  --walnut-base: #2e1e14;
+  --walnut-pore: rgba(23, 13, 8, 0.85);
+  --walnut-ambient: rgba(90, 60, 42, 0.35);
+  --walnut-hi: rgba(255, 255, 255, 0.08);
+  
+  /* Honey Oak */
+  --oak-base: #916135;
+  --oak-pore: rgba(69, 41, 14, 0.8);
+  --oak-ambient: rgba(182, 137, 75, 0.35);
+  --oak-hi: rgba(255, 255, 255, 0.15);
+
+  /* Alabaster Birch */
+  --birch-base: #e6e3d7;
+  --birch-pore: rgba(190, 185, 170, 0.65);
+  --birch-ambient: rgba(250, 248, 242, 0.6);
+  --birch-hi: rgba(255, 255, 255, 0.25);
+
+  /* Royal Black Cherry */
+  --cherry-base: #52180e;
+  --cherry-pore: rgba(43, 8, 4, 0.9);
+  --cherry-ambient: rgba(133, 44, 28, 0.4);
+  --cherry-hi: rgba(255, 255, 255, 0.11);
+
+  /* Matte Obsidian Ebony */
+  --ebony-base: #141416;
+  --ebony-pore: rgba(5, 5, 6, 0.95);
+  --ebony-ambient: rgba(60, 60, 64, 0.2);
+  --ebony-hi: rgba(255, 255, 255, 0.05);
+
+  /* Rustic Driftwood */
+  --driftwood-base: #86837c;
+  --driftwood-pore: rgba(58, 56, 51, 0.7);
+  --driftwood-ambient: rgba(165, 162, 155, 0.35);
+  --driftwood-hi: rgba(255, 255, 255, 0.1);
+}
+
+/* Horizontal planks (Top / Bottom) */
+.wood-plank-h {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Horizontal Plank Grain Fibers with Repeating Linear Gradients */
+.wood-plank-h-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    /* Coarse growth lines (irregular slant angle 1deg) */
+    repeating-linear-gradient(
+      1.2deg,
+      transparent,
+      transparent 12px,
+      var(--wood-pore) 13px,
+      var(--wood-pore) 15px,
+      transparent 18px
+    ),
+    /* Fine micro-hair wood fibers (0.5deg slant) */
+    repeating-linear-gradient(
+      0.6deg,
+      transparent,
+      transparent 2px,
+      var(--wood-pore) 2.5px,
+      var(--wood-pore) 3.5px,
+      transparent 5px
+    ),
+    /* Soft warm ambient lighting variations across length */
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(255, 255, 255, 0.05) 20%,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(255, 255, 255, 0.05) 80%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    /* Annual growth rings simulated by low-frequency radial curves */
+    radial-gradient(
+      ellipse at 50% -250%,
+      var(--wood-ambient) 0%,
+      var(--wood-base) 65%,
+      rgba(0, 0, 0, 0.35) 100%
+    );
+  background-blend-mode: multiply, multiply, normal, normal;
+  opacity: 0.94;
+}
+
+/* Vertical planks (Left / Right) */
+.wood-plank-v {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Vertical Plank Grain Fibers with Repeating Linear Gradients */
+.wood-plank-v-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    /* Coarse growth lines (irregular slant angle 88.8deg) */
+    repeating-linear-gradient(
+      88.8deg,
+      transparent,
+      transparent 12px,
+      var(--wood-pore) 13px,
+      var(--wood-pore) 15px,
+      transparent 18px
+    ),
+    /* Fine micro-hair vertical wood fibers (89.5deg) */
+    repeating-linear-gradient(
+      89.4deg,
+      transparent,
+      transparent 2px,
+      var(--wood-pore) 2.5px,
+      var(--wood-pore) 3.5px,
+      transparent 5px
+    ),
+    /* Soft warm ambient lighting variations along vertical drop */
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(255, 255, 255, 0.05) 25%,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(255, 255, 255, 0.04) 75%,
+      rgba(0, 0, 0, 0.25) 100%
+    ),
+    /* Annual growth rings simulated by low-frequency radial curves from left/right sides */
+    radial-gradient(
+      ellipse at -250% 50%,
+      var(--wood-ambient) 0%,
+      var(--wood-base) 65%,
+      rgba(0, 0, 0, 0.35) 100%
+    );
+  background-blend-mode: multiply, multiply, normal, normal;
+  opacity: 0.94;
+}
+
+/* Premium lacquer coating / varnished polished wood gloss highlight */
+.wood-lacquer-finish {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.02) 40%,
+    rgba(0, 0, 0, 0.1) 60%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  z-index: 5;
+  mix-blend-mode: overlay;
+}
+
+/* Realistic Bevel Shadows and Inset Highlight Beading for Handcrafted Moldings */
+.wood-bevel-emboss-h {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 6;
+  box-shadow: 
+    inset 0 1px 0px var(--wood-hi),
+    inset 0 -1.5px 1px rgba(0, 0, 0, 0.45);
+}
+
+.wood-bevel-emboss-v {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 6;
+  box-shadow: 
+    inset 1px 0px 0px var(--wood-hi),
+    inset -1.5px 0px 1px rgba(0, 0, 0, 0.45);
+}
+
+/* Micro-scratches and slight aging details for organic vintage gallery frame look */
+.wood-wear-scratches {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  z-index: 4;
+  background-image: 
+    repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(255, 255, 255, 0.15) 16px, transparent 17px),
+    repeating-linear-gradient(-35deg, transparent, transparent 22px, rgba(0, 0, 0, 0.2) 23px, transparent 24px);
+}
+
