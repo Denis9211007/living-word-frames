@@ -333,3 +333,72 @@ export const BACKGROUND_ARTWORKS: BackgroundArtwork[] = [
     overlayClass: "bg-[#fafaf6]/35 bg-gradient-to-b from-transparent via-[#fafaf6]/10 to-transparent",
   },
 ];
+
+export interface PresetKit {
+  id: string;
+  name: string;
+  stars: string;
+  description: string;
+  price: number;
+  material: FrameMaterial;
+  mat: MatBoard;
+  backgroundArtwork: BackgroundArtwork;
+  verse: BibleVerse;
+  font: VerseFont;
+  italics: boolean;
+}
+
+export const PRESETS: PresetKit[] = [
+  {
+    id: "gilded-sanctuary",
+    name: "Cherrywood Sanctuary",
+    stars: "5.0",
+    description: "Royal Black Cherrywood encasing an Editorial Handcrafted Garamond layout on Warm white linen backing.",
+    price: 185,
+    material: FRAME_MATERIALS[3],
+    mat: MAT_BOARDS[0],
+    backgroundArtwork: BACKGROUND_ARTWORKS[5],
+    verse: BIBLE_VERSES[2],
+    font: VERSE_FONTS[0],
+    italics: true,
+  },
+  {
+    id: "smoked-cathedral",
+    name: "The Smoked Cathedral",
+    stars: "4.9",
+    description: "Grand 16x20 Appalachian dark smoked Walnut casing paired with an oatmeal structured coarse backing mat.",
+    price: 282,
+    material: FRAME_MATERIALS[0],
+    mat: MAT_BOARDS[1],
+    backgroundArtwork: BACKGROUND_ARTWORKS[1],
+    verse: BIBLE_VERSES[1],
+    font: VERSE_FONTS[3],
+    italics: false,
+  },
+  {
+    id: "alabaster-calm",
+    name: "The Alabaster Calm",
+    stars: "4.9",
+    description: "Light, minimal Scandinavian whitewashed Birch wood harboring a modern spaced sans-serif layout.",
+    price: 176,
+    material: FRAME_MATERIALS[1],
+    mat: MAT_BOARDS[0],
+    backgroundArtwork: BACKGROUND_ARTWORKS[7],
+    verse: BIBLE_VERSES[5],
+    font: VERSE_FONTS[2],
+    italics: false,
+  },
+  {
+    id: "modern-covenant",
+    name: "The Midnight Covenant",
+    stars: "5.0",
+    description: "Sleek Matte Obsidian Ebony wood casing holding a charcoal linen backing mat board with high-gloss reflex polymer.",
+    price: 169,
+    material: FRAME_MATERIALS[4],
+    mat: MAT_BOARDS[2],
+    backgroundArtwork: BACKGROUND_ARTWORKS[4],
+    verse: BIBLE_VERSES[6],
+    font: VERSE_FONTS[1],
+    italics: false,
+  }
+];
