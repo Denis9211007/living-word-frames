@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { CustomizedOrder } from "../types";
+import { CustomizedOrder } from "../../types";
 import { X, CreditCard, ShoppingBag, Truck, Gift, CheckCircle2, ShieldCheck, MapPin, ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
-import PresetFrameMiniature from "./PresetFrameMiniature";
+import PresetFrameMiniature from "../frames/PresetFrameMiniature";
 
 interface CartDrawerProps {
   isOpen: boolean;
@@ -106,6 +106,7 @@ export default function CartDrawer({ isOpen, onClose, order }: CartDrawerProps) 
             onClick={onClose} 
             className="p-2 rounded-full hover:bg-white/5 text-stone-400 hover:text-white transition-all border border-transparent hover:border-white/10"
           >
+            <span className="sr-only">Close</span>
             <X className="w-4 h-4" />
           </button>
         </div>
@@ -476,7 +477,7 @@ export default function CartDrawer({ isOpen, onClose, order }: CartDrawerProps) 
               {includeGiftWrap && (
                 <div className="flex justify-between">
                   <span className="text-stone-400 font-semibold uppercase tracking-wider text-[10px]">Gift Service Wrap</span>
-                  <span className="font-bold text-stone-200">+$12.00</span>
+                  <span className="font-bold text-stone-200 font-sans">+$12.00</span>
                 </div>
               )}
               <div className="flex justify-between">
@@ -490,9 +491,9 @@ export default function CartDrawer({ isOpen, onClose, order }: CartDrawerProps) 
             </div>
 
             <button
-              id="goto-shipping-btn"
+              id="secure-checkout-bottom-btn"
               onClick={handleNextToShipping}
-              className="w-full py-4 text-xs font-extrabold uppercase tracking-widest text-stone-950 bg-[#7ea18b] hover:bg-[#6ba080] transition-all shadow-xl rounded-2xl flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full py-4 text-xs font-extrabold uppercase tracking-widest text-[#0c0d12] bg-[#7ea18b] hover:bg-[#6ba080] transition-all shadow-xl rounded-2xl flex items-center justify-center gap-2 cursor-pointer"
             >
               Secure Order Checkout <ChevronRight className="w-4 h-4" />
             </button>

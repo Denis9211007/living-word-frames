@@ -1,4 +1,4 @@
-import { FrameMaterial, FrameSize, MatBoard, GlassType, BibleVerse, VerseFont, Testimonial, BackgroundArtwork } from "./types";
+import { FrameMaterial, FrameSize, MatBoard, GlassType, BibleVerse, VerseFont, Testimonial, BackgroundArtwork } from "../types";
 
 export const FRAME_MATERIALS: FrameMaterial[] = [
   {

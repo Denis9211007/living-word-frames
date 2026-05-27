@@ -1,28 +1,20 @@
-# Living Word Frames
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
+</div>
 
-Business website for biblical verse frames
+# Run and deploy your AI Studio app
 
-<img width="2107" height="1145" alt="{D07D9778-E37E-4BC3-BF77-1A94EAC65D87}" src="https://github.com/user-attachments/assets/65f87815-07a1-4b50-8e9d-59b298f62b6d" />
+This contains everything you need to run your app locally.
 
-##  Features
+View your app in AI Studio: https://ai.studio/apps/7d747bcc-2641-4487-a70e-92aed3d5cd59
 
-- Clean Modern Responsive Hero Page
-- Custom Frame Designing Section
-- Checkout Section
-- Fast and responsive
+## Run Locally
 
----
-## 🛠 Tech Stack
+**Prerequisites:**  Node.js
 
-- Frontend: Typescript
-- Database: 
-- Styling: Tailwind CSS
-- Deployement:
----
-## 📦 Installation
 
-Clone the repository:
-
-```bash
-git clone [https://github.com/Denis9211007/living-word-frames.git]
-
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`

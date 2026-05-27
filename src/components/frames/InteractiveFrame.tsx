@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { CustomizedOrder } from "../types";
-import { INTERIOR_PREVIEWS } from "../data";
+import { CustomizedOrder } from "../../types";
+import { INTERIOR_PREVIEWS } from "../../data";
 import { Sparkles, Eye, Maximize, RefreshCw } from "lucide-react";
 import { motion } from "motion/react";
 

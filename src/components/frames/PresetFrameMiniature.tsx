@@ -1,5 +1,5 @@
 import React from "react";
-import { FrameMaterial, MatBoard, BackgroundArtwork, BibleVerse, VerseFont } from "../types";
+import { FrameMaterial, MatBoard, BackgroundArtwork, BibleVerse, VerseFont } from "../../types";
 
 interface PresetFrameMiniatureProps {
   material: FrameMaterial;

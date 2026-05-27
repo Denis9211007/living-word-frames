@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { CustomizedOrder } from "../types";
-import { BookOpen, Sparkles, Heart, Shield, ShoppingBag, Eye } from "lucide-react";
+import { CustomizedOrder } from "../../types";
+import { ShoppingBag } from "lucide-react";
 
 interface NavigationProps {
   order: CustomizedOrder;

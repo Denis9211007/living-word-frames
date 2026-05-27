@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { CustomizedOrder, BibleVerse } from "../types";
+import { CustomizedOrder, BibleVerse } from "../../types";
 import { 
   BIBLE_VERSES, 
   VERSE_FONTS,
   BACKGROUND_ARTWORKS
-} from "../data";
+} from "../../data";
 import { 
   BookOpen, 
   Sparkles, 
@@ -141,7 +141,7 @@ export default function CustomizerPanel({ order, onUpdateOrder }: CustomizerPane
                       "{bibleVerse.verse}"
                     </p>
                     <div className="flex items-center justify-between mt-auto w-full">
-                      <span className="text-[9px] font-sans uppercase tracking-widest text-stone-400 font-semibold">{bibleVerse.reference}</span>
+                      <span className="text-[9px] font-sans uppercase tracking-[0.05em] text-stone-400 font-semibold">{bibleVerse.reference}</span>
                       <span className="text-[8px] bg-[#7ea18b]/15 border border-[#7ea18b]/20 font-sans text-[#7ea18b] px-1.5 py-0.5 rounded font-medium">{bibleVerse.category}</span>
                     </div>
 
@@ -259,7 +259,7 @@ export default function CustomizerPanel({ order, onUpdateOrder }: CustomizerPane
                       onClick={() => onUpdateOrder({ italics: !order.italics, totalPrice: 129 })}
                       className={`px-2.5 py-1.5 text-[10px] uppercase tracking-wider font-bold rounded-lg border transition-all ${order.italics ? "border-[#7ea18b] text-[#7ea18b] bg-[#7ea18b]/5" : "border-white/10 text-stone-400"}`}
                     >
-                      <span className="italic mr-1">I</span> Italics
+                      <span className="italic mr-1 font-serif">I</span> Italics
                     </button>
                   </div>
                 </div>
