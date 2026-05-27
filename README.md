@@ -1,29 +1,106 @@
 # Living Word Frames
 
-Business website for biblical verse frames
+Living Word Frames is a premium Next.js storefront for custom biblical verse frames. It combines an immersive UI, interactive frame designer, and Prisma-backed product API for managing a PostgreSQL product catalog.
 
-<img width="2107" height="1145" alt="{D07D9778-E37E-4BC3-BF77-1A94EAC65D87}" src="https://github.com/user-attachments/assets/65f87815-07a1-4b50-8e9d-59b298f62b6d" />
+## Features
 
-<img width="2105" height="1042" alt="{37C6A83E-186F-479F-ADBB-DF8E42488D6A}" src="https://github.com/user-attachments/assets/d3a1021e-4b0a-4a4b-81db-69f57606f41b" />
-##  Features
+- Modern responsive landing page with glassmorphism styling
+- Interactive custom frame designer and cart drawer
+- Server-side product API route using Next.js App Router
+- Prisma data model with PostgreSQL datasource
+- TypeScript-first implementation with Tailwind CSS styles
 
-- Clean Modern Responsive Hero Page
-- Custom Frame Designing Section
-- Checkout Section
-- Fast and responsive
+## Tech Stack
 
-<img width="2107" height="1145" alt="{A6491E85-9388-40F5-BADF-B4BAE80A45BC}" src="https://github.com/user-attachments/assets/717dd153-fc8d-4b9b-85d2-4e1ebc585e06" />
----
-## 🛠 Tech Stack
-
-- NEXTJS
+- Next.js 15
+- React 19
+- TypeScript
+- Prisma 7
 - PostgreSQL
-- Prisma
----
-## 📦 Installation
+- Tailwind CSS / PostCSS
 
-<img width="2103" height="1141" alt="{127DE510-8CD0-4F07-8B44-0CDF3A18A40E}" src="https://github.com/user-attachments/assets/97c91031-c64e-4cf4-bc9b-8056206a5d74" />
-Clone the repository:
+## Getting Started
+
+### Prerequisites
+
+- Node.js 20+
+- npm 10+
+- PostgreSQL database
+
+### Install
 
 ```bash
-git clone [https://github.com/Denis9211007/living-word-frames.git]
+git clone https://github.com/Denis9211007/living-word-frames.git
+cd living-word-frames
+npm install
+```
+
+### Environment
+
+Create a `.env` file in the project root with your PostgreSQL connection string:
+
+```bash
+DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE"
+```
+
+### Prisma setup
+
+When setting up locally, run:
+
+```bash
+npx prisma generate
+npx prisma migrate dev --name init
+```
+
+The schema is defined in `prisma/schema.prisma`.
+
+### Run locally
+
+```bash
+npm run dev
+```
+
+Open http://localhost:3000 to view the app.
+
+### Build for production
+
+```bash
+npm run build
+npm run preview
+```
+
+## Project Structure
+
+- `src/app/` — Next.js App Router pages and layouts
+- `src/app/api/products/route.ts` — product API route
+- `src/lib/prisma.ts` — Prisma client wrapper
+- `prisma/schema.prisma` — Prisma data model
+- `src/generated/prisma/` — generated Prisma client output
+
+## Prisma Schema
+
+The app uses a simple `Product` model:
+
+- `id` — primary key
+- `title` — product name
+- `slug` — unique URL key
+- `description` — product description
+- `price` — product price
+- `imageUrl` — image URL
+- `createdAt` — creation timestamp
+
+## Available Scripts
+
+- `npm run dev` — start development server
+- `npm run build` — create production build
+- `npm run preview` — preview production build locally
+- `npm run lint` — run TypeScript type checking
+
+## Notes
+
+- `.next/` is ignored by git and not included in the repository
+- Keep `DATABASE_URL` private and avoid committing `.env` to version control
+
+## License
+
+This project does not include a license file by default. Add one if you want to publish or share the repository.
