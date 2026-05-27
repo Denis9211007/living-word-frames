@@ -16,10 +16,9 @@ Business website for biblical verse frames
 ---
 ## 🛠 Tech Stack
 
-- Frontend: Typescript
-- Database: 
-- Styling: Tailwind CSS
-- Deployement:
+- NEXTJS
+- PostgreSQL
+- Prisma
 ---
 ## 📦 Installation
 
